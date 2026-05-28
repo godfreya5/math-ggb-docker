@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped

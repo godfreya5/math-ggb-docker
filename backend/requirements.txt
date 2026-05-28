@@ -1,0 +1,12 @@
+fastapi>=0.115
+uvicorn>=0.34
+sqlalchemy[asyncio]>=2.0
+aiosqlite>=0.20
+openai>=1.58
+pydantic>=2.0
+pydantic-settings>=2.0
+python-jose[cryptography]>=3.3
+passlib[bcrypt]>=1.7
+python-multipart>=0.0.18
+aiofiles>=24.0
+httpx>=0.28
