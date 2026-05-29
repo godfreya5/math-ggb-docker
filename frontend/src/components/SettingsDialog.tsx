@@ -28,6 +28,11 @@ const PRESETS: Record<string, Omit<LLMConfig, "api_key">> = {
     base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1",
     model: "qwen-vl-plus",
   },
+  mimo: {
+    provider: "mimo",
+    base_url: "https://api.xiaomimimo.com/v1",
+    model: "mimo-v2-flash",
+  },
 }
 
 export default function SettingsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -120,7 +125,7 @@ export default function SettingsDialog({ open, onClose }: { open: boolean; onClo
                         : "bg-slate-100 text-slate-600 hover:bg-slate-200 border border-transparent"
                     }`}
                   >
-                    {name === "zhipu" ? "智谱 GLM" : name === "deepseek" ? "DeepSeek" : name === "qwen" ? "通义千问" : name}
+                    {name === "zhipu" ? "智谱 GLM" : name === "deepseek" ? "DeepSeek" : name === "qwen" ? "通义千问" : name === "mimo" ? "小米MiMo" : name}
                   </button>
                 ))}
               </div>
@@ -133,7 +138,7 @@ export default function SettingsDialog({ open, onClose }: { open: boolean; onClo
                 <Input
                   value={config.provider}
                   onChange={e => setConfig(p => ({ ...p, provider: e.target.value }))}
-                  placeholder="如 zhipu、deepseek、qwen"
+                  placeholder="如 zhipu、deepseek、qwen、mimo"
                   className="rounded-xl text-sm"
                 />
               </div>
@@ -161,7 +166,7 @@ export default function SettingsDialog({ open, onClose }: { open: boolean; onClo
                 <Input
                   value={config.model}
                   onChange={e => setConfig(p => ({ ...p, model: e.target.value }))}
-                  placeholder="如 glm-4v、deepseek-chat"
+                  placeholder="如 glm-4v、deepseek-chat、mimo-v2-flash"
                   className="rounded-xl text-sm"
                 />
               </div>

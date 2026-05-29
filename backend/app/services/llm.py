@@ -226,6 +226,13 @@ def get_llm() -> BaseLLM:
             api_key=api_key,
             model=model or "qwen-vl-plus",
         )
+    elif provider == "mimo":
+        return OpenAICompatibleLLM(
+            name="mimo",
+            base_url=base_url or "https://api.xiaomimimo.com/v1",
+            api_key=api_key,
+            model=model or "mimo-v2-flash",
+        )
     else:
         return OpenAICompatibleLLM(
             name=provider,
