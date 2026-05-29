@@ -231,7 +231,7 @@ def get_llm() -> BaseLLM:
             name="mimo",
             base_url=base_url or "https://api.xiaomimimo.com/v1",
             api_key=api_key,
-            model=model or "mimo-v2-flash",
+            model=model or "mimo-v2.5",
         )
     else:
         return OpenAICompatibleLLM(
