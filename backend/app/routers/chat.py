@@ -37,7 +37,7 @@ async def upload_image(
 
     session.image_path = filepath
     await db.commit()
-    return {"image_path": filepath, "filename": filename}
+    return {"image_path": f"/uploads/{filename}", "filename": filename}
 
 @router.post("/{session_id}/chat", response_model=ChatResponse)
 async def chat(
